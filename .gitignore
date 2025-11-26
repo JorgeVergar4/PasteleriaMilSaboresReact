@@ -100,3 +100,6 @@ temp/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Claude AI
+.claude/
