@@ -374,8 +374,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👥 Equipo
 
-- **Desarrollador Principal**: [Tu Nombre]
-- **Diseño UX/UI**: [Nombre del Diseñador]
+- Fossilbyte
 - **Pastelería Mil Sabores**: 50 años de tradición
 
 ---
