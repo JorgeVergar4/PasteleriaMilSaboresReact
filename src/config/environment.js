@@ -48,4 +48,6 @@ export const config = {
   GA_TRACKING_ID: process.env.REACT_APP_GA_TRACKING_ID,
 };
 
+console.log('API_BASE_URL en runtime:', process.env.REACT_APP_API_BASE_URL);
+
 export default config;

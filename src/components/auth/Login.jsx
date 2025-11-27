@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { usuariosService } from '../../data/dataService';
+import { login as loginApi } from '../../services/authService';
+
 
 const Login = ({ setUsuario }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -13,20 +14,38 @@ const Login = ({ setUsuario }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
-    const usuario = usuariosService.login(formData.email, formData.password);
-    
-    if (usuario) {
-      setUsuario(usuario);
-      localStorage.setItem('usuario', JSON.stringify(usuario));
+    try {
+      // Llamar a la API real
+      const data = await loginApi(formData.email, formData.password);
+      // data = { user: {...}, token: '...' }
+
+      const usuarioBackend = {
+        ...data.user,
+        token: data.token,
+      };
+
+      // Guardar en estado global (App) y en localStorage
+      setUsuario(usuarioBackend);
+      localStorage.setItem('usuario', JSON.stringify(usuarioBackend));
+
+      // Redirigir a home
       navigate('/');
-    } else {
-      setError('Email o contraseña incorrectos');
+    } catch (err) {
+      console.error('Error en login:', err);
+
+      // Mostrar mensaje adecuado
+      if (err.response && err.response.status === 401) {
+        setError('Email o contraseña incorrectos');
+      } else {
+        setError('Ocurrió un error al iniciar sesión. Intenta nuevamente.');
+      }
     }
   };
+
 
   return (
     <div style={{

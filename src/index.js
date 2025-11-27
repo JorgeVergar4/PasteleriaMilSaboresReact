@@ -11,3 +11,8 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+console.log('PRUEBA CONSOLE LOG - INDEX');
+console.log('REACT_APP_API_BASE_URL directa:', process.env.REACT_APP_API_BASE_URL);
+
+

@@ -46,7 +46,7 @@ import Login from './components/auth/Login';
 import Registro from './components/auth/Registro';
 import Perfil from './components/auth/Perfil';
 import RecuperarPassword from './components/auth/RecuperarPassword';
-
+import ApiTest from './pages/ApiTest';
 
 // --- ADMINISTRADOR ---
 import Dashboard from './components/admin/Dashboard';
@@ -166,6 +166,7 @@ function App() {
 
               {/* Rutas principales */}
               <Route path="/" element={<Home agregarAlCarrito={agregarAlCarrito} />} />
+              <Route path="/api-test" element={<ApiTest />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
 
