@@ -1,7 +1,7 @@
 // Configuración de variables de entorno
 export const config = {
   // URLs base
-  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001/api',
+  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || 'https://back-end-pasteleria-mil-sabores.vercel.app/api',
   
   // Configuración de la aplicación
   APP_NAME: 'Pastelería Mil Sabores',
@@ -47,5 +47,7 @@ export const config = {
   ENABLE_ANALYTICS: process.env.REACT_APP_ENABLE_ANALYTICS === 'true',
   GA_TRACKING_ID: process.env.REACT_APP_GA_TRACKING_ID,
 };
+
+console.log('API_BASE_URL en runtime:', process.env.REACT_APP_API_BASE_URL);
 
 export default config;
