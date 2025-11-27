@@ -1,7 +1,7 @@
 // Configuración de variables de entorno
 export const config = {
   // URLs base
-  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001/api',
+  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || 'https://back-end-pasteleria-mil-sabores.vercel.app/api',
   
   // Configuración de la aplicación
   APP_NAME: 'Pastelería Mil Sabores',
